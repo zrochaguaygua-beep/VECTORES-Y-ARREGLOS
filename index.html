@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Vectores Básicos</title>
+</head>
+<link rel="java" href="main.js">
+<body>
+    <h2>Vector de Frutas</h2>
+    <input id="frutaInput" type="text" placeholder="Escribe una fruta">
+    <button onclick="agregarFruta()">Agregar al vector</button>
+    <p id="frutasSalida"></p>
+    <h2>Vector de Números</h2>
+    <input id="numeroInput" type="number" placeholder="Escribe un número">
+    <button onclick="agregarNumero()">Agregar al vector</button>
+    <p id="numerosSalida"></p>
+    <script>
+        let frutas = [];
+        let numeros = [];
+        function agregarFruta() {
+            let fruta = document.getElementById("frutaInput").value;
+            if (fruta === "") {
+                alert("Escribe una fruta");
+                return;
+            }
+            frutas.push(fruta); 
+            document.getElementById("frutaInput").value = ""; 
+            document.getElementById("frutasSalida").innerHTML =
+                "Frutas: " + frutas.join(", ");
+        }
+
+
+        function agregarNumero() {
+            let numero = document.getElementById("numeroInput").value;
+            if (numero === "") {
+                alert("Escribe un número");
+                return;
+            }
+            numeros.push(Number(numero)); 
+            document.getElementById("numeroInput").value = ""; 
+            document.getElementById("numerosSalida").innerHTML =
+                "Números: " + numeros.join(", ");
+        }
+    </script>
+</body>
+</html>
+
